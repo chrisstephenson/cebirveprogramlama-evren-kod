@@ -1,1 +1,1 @@
-# cebirveprog-2024-evren-kod
+# cebirveprogramlama-evren-kod
