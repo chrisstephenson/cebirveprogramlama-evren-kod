@@ -6,8 +6,6 @@
 (define FRAME-RATE 12)
 
 
-
-
 ;; STRUCT v - vektör
 ;; x : sayı - x koordinatı
 ;; y : sayı - y koordinatı
@@ -46,7 +44,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Hediye vektör çizim fonksiyonları
-;; Vektör STRUCT tanıttıktan sonra bu fonkisyonları uncomment edebilirsiniz
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;place-image/v
 ;; resim v sahne -> sahne
@@ -94,10 +91,12 @@
 
 (define (nesne-güncelle n)
   n)
+  
+  
 (define (nesne-çiz n b)
   (place-image/v (nesne-imaj n) (nesne-yer n) b))
 
-;; STRUCT evren
+;; STRUCT evren (-oyununa göre değişecek)
 ;; arkaplanı : görüntü - oyun arka planı
 ;;
 (STRUCT evren (arkaplanı nesne-a nesne-b nesne-c))
