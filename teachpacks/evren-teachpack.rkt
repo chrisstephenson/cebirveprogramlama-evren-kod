@@ -13,7 +13,9 @@
          (all-from-out 2htdp/image)
          (all-from-out test-engine/racket-tests)
          play-sound)
-(provide (rename-out (check-expect ÖRNEK)))
+; ÖRNEK now defaults to inexact comparisons
+;(provide (rename-out (check-expect ÖRNEK)))
+(provide ÖRNEK)
 
 (define (SES v s)
   (play-sound s true)
@@ -22,6 +24,8 @@
 (define-syntax-rule (STRUCT id body)
   (struct id body  #:inspector (make-inspector (current-inspector))))
 
+(define-syntax-rule (ÖRNEK a b)
+  (check-within a b 0.001))
 
 (define (yut x)
   (display ""))
