@@ -16,6 +16,13 @@
 ; ÖRNEK now defaults to inexact comparisons
 ;(provide (rename-out (check-expect ÖRNEK)))
 (provide ÖRNEK)
+(provide sine cosine)
+
+(define (sine angle-in-degrees)
+  (sin (/ (* pi angle-in-degrees) 180)))
+
+(define (cosine angle-in-degrees)
+  (cos (/ (* pi angle-in-degrees) 180)))
 
 (define (SES v s)
   (play-sound s true)
