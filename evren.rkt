@@ -4,14 +4,15 @@
 (define BACKGROUND (bitmap "imaj/kutuphane.jpg")) 
 
 (define FRAME-RATE 12)
-
+ 
+(check-expect false false)
 
 ;; STRUCT v - vektör
 ;; x : sayı - x koordinatı
 ;; y : sayı - y koordinatı
 (STRUCT v (x y))
 
-
+(ÖRNEK (not (= 1 2)) true)
 ;; v+ - vektör toplama
 ;; 
 ;;
@@ -70,7 +71,7 @@
 ; v1'den v2'e giden bir çizgi arka imajına yerleştir
 (ÖRNEK (place-line/v (v 2 3) (v 5 1) "red" test-square)
        (add-line test-square 2 3 5 1 "red")) 
-
+;
 (define (place-line/v v1 v2 renk arka)
   (add-line arka (v-x v1) (v-y v1) (v-x v2) (v-y v2) renk)) 
 
@@ -78,6 +79,7 @@
 ; v pozisyonda  verilen metni arka imajına yerleştir
 (ÖRNEK (place-text/v (v 20 30) "Hello" 15 "red" test-square)
        (place-image/v (text "Hello" 15 "red") (v 20 30) test-square))
+;
 (define (place-text/v v metin size col arka)
   (place-image/v (text metin size col) v arka))
 
@@ -128,15 +130,15 @@
 ;; SES herhangbirşey ses-dosyası-metin -> herhangibirşey
 ;; birinci paramatresini aynen dönsürüyor, sesi çalarak
 ;(ÖRNEK (SES 0 "ses/bark.wav") 0)
-
+;(ÖRNEK false false)
 (test)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sabit kod bundan sonra                               ;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(yut (big-bang yaradılış
+(define (go) (yut (big-bang yaradılış
   (on-tick evren-güncelle (/ 1.0 FRAME-RATE))
   (on-draw evren-çiz)
   (on-key evren-tuş)
-  (on-mouse evren-fare)))
+  (on-mouse evren-fare))))
 

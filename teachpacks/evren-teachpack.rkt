@@ -16,6 +16,7 @@
 ; ÖRNEK now defaults to inexact comparisons
 ;(provide (rename-out (check-expect ÖRNEK)))
 (provide ÖRNEK)
+(provide ÖRNEK-YAKIN)
 (provide sine cosine)
 
 (define (sine angle-in-degrees)
@@ -31,12 +32,13 @@
 (define-syntax-rule (STRUCT id body)
   (struct id body  #:inspector (make-inspector (current-inspector))))
 
-(define-syntax-rule (ÖRNEK a b)
+(define-syntax-rule (ÖRNEK-YAKIN a b)
   (check-within a b 0.001))
+
+(define-syntax-rule (ÖRNEK a b)
+  (check-expect a b))
 
 (define (yut x)
   (display ""))
-
-
 
 
