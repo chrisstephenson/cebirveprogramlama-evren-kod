@@ -8,13 +8,14 @@
 (require (only-in racket/gui/base play-sound))
 (require test-engine/racket-tests)
 
+; *** SES doesn't work consistently across operating systems!
 (provide STRUCT SES yut
          (all-from-out 2htdp/universe)
          (all-from-out 2htdp/image)
          (all-from-out test-engine/racket-tests)
          play-sound)
-; ÖRNEK now defaults to inexact comparisons
-;(provide (rename-out (check-expect ÖRNEK)))
+; ÖRNEK now defaults to exact comparisons *** Find a better solution
+; ÖRNEK-YAKIN provides inexact comparisons *** Find a better solution
 (provide ÖRNEK)
 (provide ÖRNEK-YAKIN)
 (provide sine cosine)

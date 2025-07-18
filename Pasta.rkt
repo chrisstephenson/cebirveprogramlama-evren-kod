@@ -16,6 +16,12 @@
 (define pasta-örneği
   (pasta "pink"  3 "Mutlu Yıllar " "green" 200))
 
+(ÖRNEK pasta-örneği (pasta (pasta-renk pasta-örneği)
+                           (pasta-kat pasta-örneği)
+                           (pasta-mesaj pasta-örneği)
+                           (pasta-mesaj-rengi pasta-örneği)
+                           (pasta-yarı-çap pasta-örneği)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Verilmiş kod
 ;;; Buraya dokunma..
@@ -38,3 +44,4 @@
 ;;; Verilmiş kod sonu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(test)
